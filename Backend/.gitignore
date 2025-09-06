@@ -1,2 +1,5 @@
+node_modules/
 .env
-/init/.env
+/init.env
+dist/
+*.log
