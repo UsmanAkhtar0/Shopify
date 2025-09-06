@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from "axios";
+import axios from "../uitls/axios.js";
 import { Link } from 'react-router-dom';
 import Category from './Category';
 
@@ -8,13 +8,13 @@ export default function ProductList({ query }) {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/products/")
+        axios.get("/products")
             .then((res) => (setProducts(res.data)))
             .catch(err => console.log(err))
     }, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/products/search?query=${query}`)
+        axios.get(`/products/search?query=${query}`)
             .then((res) => (setProducts(res.data)))
             .catch(err => console.log(err))
     }, [query])

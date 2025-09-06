@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../uitls/axios.js'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ function ProductDetail() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/products/${id}/`)
+        axios.get(`/products/${id}/`)
             .then((res) => setProduct(res.data))
             .catch((err) => console.log(err))
     }, [])

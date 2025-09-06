@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://localhost:8000/api",
+    baseURL: "https://shopifybackend-pxpl.onrender.com/api",
     // withCredentials: true    // allow cookies to be send
 })
 
