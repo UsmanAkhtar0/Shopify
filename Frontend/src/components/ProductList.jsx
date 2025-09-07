@@ -17,8 +17,8 @@ export default function ProductList({ query }) {
         axios.get(`/products/search?query=${query}`)
             .then((res) => (setProducts(res.data)))
             .catch(err => console.log(err))
-    }, [query])
 
+    }, [query])
 
 
     // console.log(products);
@@ -26,6 +26,7 @@ export default function ProductList({ query }) {
     return (
         <>
             <Category />
+            {(!products || products.length === 0) && <div className="flex justify-center items-center py-10 text-gray-600 text-xl font-medium">It will take few second please wait...</div>}
             <div className='lg:px-10 m-4'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
                     {products.map((product) => (
@@ -42,7 +43,7 @@ export default function ProductList({ query }) {
                                     {/* Content */}
                                     <div className="p-5">
                                         <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
-                                        <h3 className="text-gray-800">Price: {product.price}$</h3>
+                                        <h3 className="text-gray-800">Price: ₹{product.price}</h3>
                                         <p className="text-gray-600 mt-2">
                                             {product.description}
                                         </p>

@@ -37,8 +37,8 @@ function ProductDetail() {
 
                         {/* Price */}
                         <div className="mt-4 flex items-center ">
-                            <span className="text-2xl font-semibold text-green-600">price: ${product.price}</span>
-                            <span className="text-sm text-gray-500 line-through">$3,999</span>
+                            <span className="text-2xl font-semibold text-green-600">price: ₹{product.price}</span>
+                            <span className="text-sm text-gray-500 line-through">₹3,999</span>
                         </div>
 
                         {/* Buttons */}

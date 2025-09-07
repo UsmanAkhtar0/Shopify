@@ -9,6 +9,7 @@ function Navbar({ query, setQuery }) {
     const navigate = useNavigate();
 
     const goToHome = () => {
+        setQuery("")
         navigate("/products");
     }
     const goToAuth = () => {
@@ -23,6 +24,7 @@ function Navbar({ query, setQuery }) {
     const handleSearch = async (e) => {
         e.preventDefault();
         setQuery(search)
+        navigate("/products")
     }
 
     return (
