@@ -32,7 +32,7 @@ router.get("/search", async (req, res) => {
     }
 });
 
-// Only one project
+// Product Detail
 router.get("/:id", async (req, res) => {
     try {
         const product = await Product.findById(req.params.id)

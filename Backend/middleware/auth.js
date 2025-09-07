@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken"
 
 export const authMiddleware = (req, res, next) => {
-    // If using cookies
-    const token = req.cookies?.token;
+
+    const token = req.headers.authorization?.split(" ")[1]; // "Bearer token"
 
     if (!token) {
+        console.log(token)
         return res.status(400).json({ message: "token not found" });
     }
 
@@ -13,7 +14,7 @@ export const authMiddleware = (req, res, next) => {
             return res.status(401).json({ message: "invalid token" })
         }
 
-        req.user = decode; // {id, username, role}
+        req = decode; // {id, username, role}
         next();
     })
 }
