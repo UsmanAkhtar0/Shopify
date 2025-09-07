@@ -16,7 +16,7 @@ function ProductDetail() {
 
     return (
         <>
-            <div className="flex justify-center items-center bg-gray-100 px-30 py-8 ">
+            <div className="flex justify-center items-center bg-gray-100 px-2 py-2 ">
                 <div className="w-full   bg-white rounded-2xl shadow-lg overflow-hidden">
                     {/* Product Image */}
                     <img

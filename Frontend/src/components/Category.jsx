@@ -56,9 +56,6 @@ function Category() {
                 <p className=' pt-1 text-center'>saree</p>
             </div>
 
-
-
-
         </div>
     )
 }

@@ -34,18 +34,18 @@ function Navbar({ query, setQuery }) {
 
                     <form
                         onSubmit={handleSearch}
-                        className="flex items-center space-x-2 w-full max-w-sm mx-auto"
+                        className="flex items-center space-x-2 lg:w-full  max-w-sm mx-auto"
                     >
                         <input
                             type="text"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search"
-                            className=" flex-1 bg-white text-black px-3 h-8 text-sm rounded-full border border-gray-300 focus:outline-none "
+                            className=" flex-1 bg-white text-black px-3 h-9 text-sm rounded-full border border-gray-300 focus:outline-inherit "
                         />
                         <button
                             type="submit"
-                            className="hidden sm:inline bg-red-500 h-8 px-3 text-sm text-white rounded-full hover:bg-red-600 transition"
+                            className="hidden sm:inline bg-red-500 h-9 px-3 text-sm text-white rounded-full hover:bg-red-600 transition cursor-pointer"
                         >
                             Search
                         </button>
