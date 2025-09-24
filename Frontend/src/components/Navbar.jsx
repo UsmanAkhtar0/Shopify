@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { Menu, X } from "lucide-react"
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import {setQuery} from '../uitls/features/querySlice'
 
-function Navbar({ query, setQuery }) {
+
+function Navbar() {
+
+    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("")
 
@@ -23,7 +28,7 @@ function Navbar({ query, setQuery }) {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        setQuery(search)
+        dispatch(setQuery(search))
         navigate("/products")
     }
 

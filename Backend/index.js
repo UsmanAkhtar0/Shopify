@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
     origin: process.env.FRONTEND_ORIGIN,       // For request from anywhere "*"
-    credentials: true                      // allows cookies
+    credentials: true                         // allows cookies
 }))
 
 app.get("/home", (req, res) => {

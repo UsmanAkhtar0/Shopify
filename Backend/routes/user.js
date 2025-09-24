@@ -45,13 +45,14 @@ router.post("/login", async (req, res) => {
         const { default: jwt } = await import("jsonwebtoken");
         const token = jwt.sign({ id: user._id }, "my_super_secret", { expiresIn: "1d" });
 
+        user.token = token;
         // Send Cookie - currently it is not in use
-        res.cookie("token", token, {
-            httpOnly: true, // for security through js it is inaccesiable
-            secure: true,  // for production make it true for better https security
-            // sameSite: "strict"
-        })
-
+        // res.cookie("token", token, {
+        //     httpOnly: true, // for security through js it is inaccesiable
+        //     secure: true,  // for production make it true for better https security
+        //     // sameSite: "strict"
+        // })
+        await user.save();
         res.json({ message: "Login successfull", token, user: { id: user._id, username: username, role: user.role } });
 
     } catch (error) {

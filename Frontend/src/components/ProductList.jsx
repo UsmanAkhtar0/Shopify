@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import axios from "../uitls/axios.js";
 import { Link } from 'react-router-dom';
 import Category from './Category';
+import { useSelector } from 'react-redux';
 
-export default function ProductList({ query }) {
+export default function ProductList() {
 
+    const query = useSelector((state) => state.query.value)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -19,7 +21,6 @@ export default function ProductList({ query }) {
             .catch(err => console.log(err))
 
     }, [query])
-
 
     // console.log(products);
 
