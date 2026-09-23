@@ -63,8 +63,8 @@ function Navbar() {
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex space-x-6 text-lg">
                         <li className="hover:text-gray-400 cursor-pointer" onClick={goToHome}>Home</li>
-                        <li className="hover:text-gray-400 cursor-pointer">About</li>
-                        <li className="hover:text-gray-400 cursor-pointer">Contact</li>
+                      { /* <li className="hover:text-gray-400 cursor-pointer">About</li> */}
+                        <li className="hover:text-gray-400 cursor-pointer">Help</li>
                         {token && <li className="hover:text-gray-400 cursor-pointer" onClick={logout}>Logout</li>}
                         {!token && <li className="hover:text-gray-400 cursor-pointer" onClick={goToAuth}>Login</li>}
 

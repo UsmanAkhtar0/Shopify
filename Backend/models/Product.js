@@ -12,9 +12,9 @@ const reviewSchema = new mongoose.Schema(
 
 const productSchema = new mongoose.Schema(
     {
-        name: { type: String, require: true },
-        price: { type: Number, require: true },
-        brand: { type: String, require: true },
+        name: { type: String, required: true },
+        price: { type: Number, required: true },
+        brand: { type: String, required: true },
         description: { type: String },
         imageUrl: { type: String },
         review: [reviewSchema],
